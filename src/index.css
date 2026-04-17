@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  --color-bg: #0b0e14;
+  --color-card-bg: #161b22;
+  --color-accent: #7c3aed;
+  --color-accent-hover: #8b5cf6;
+  --color-text-main: #f8fafc;
+  --color-text-dim: #94a3b8;
+  --color-border: #30363d;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-main antialiased;
+  }
+}
+
+@layer components {
+  .option-pill {
+    @apply bg-card-bg border border-border rounded-md px-3 py-2 text-center text-sm cursor-pointer transition-colors hover:border-accent/50;
+  }
+  
+  .option-pill.active {
+    @apply border-accent bg-accent/10;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-white font-semibold py-3 px-6 rounded-lg shadow-lg shadow-accent/20 transition-all hover:bg-accent-hover active:scale-95;
+  }
+}
